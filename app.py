@@ -17,11 +17,8 @@ from flask_login import current_user, login_user, logout_user
 from flask_login import login_required
 
 
-
-
 app = Flask(__name__)
-app.config.from_mapping(
-    SECRET_KEY=b'this-is-not-very-secure-but-will-work')
+app.config.from_mapping(SECRET_KEY=b'this-is-not-very-secure-but-will-work')
 
 # ******************** configure app to link with sqlite database *************, form=form
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
@@ -35,7 +32,6 @@ login = LoginManager(app)
 login.login_view = 'sign_in'
 
 Bootstrap(app)
-
 from models import User, Games
 
 # nav bar implemented here...
@@ -110,15 +106,7 @@ def reg():
     return render_template('register.html', form=form)
 
 
-
-
-
-
 nav.init_app(app)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
-
-
-
-   

@@ -40,20 +40,10 @@ class User(UserMixin, db.Model): # ********************* Flask-Login  extension 
 
 
 class Games(db.Model):
-    slot_id = db.Column(db.String, nullable=False)
     game_id = db.Column(db.Integer, primary_key=True)
-    reel1 = db.Column(db.Integer, nullable=False)
-    reel2 = db.Column(db.Integer, nullable=False)
-    reel3 = db.Column(db.Integer, nullable=False)
-    stake = db.Column(db.Integer, nullable=False)
-    won = db.Column(db.Integer, nullable=True)
     timestamp = db.Column(db.String(20))
     user_id = db.Column(db.Integer, ForeignKey(User.id), nullable=False)
 
-class Transaction(db.Model):
-    transactino_id = db.Column(db.Integer, primary_key=True)
-    house_win = db.Column(db.Integer(), nullable=True)
-    user_win = db.Column(db.Integer(), nullable=True)
 
 
 
