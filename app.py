@@ -24,7 +24,7 @@ app.config.from_mapping(
     SECRET_KEY=b'this-is-not-very-secure-but-will-work')
 
 # ******************** configure app to link with sqlite database *************, form=form
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bullslot.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # ******************** instantiate the SQLAlchemy class with one argument of the Flask app.*************
