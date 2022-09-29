@@ -15,7 +15,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_login import current_user, login_user, logout_user
 from flask_login import login_required
-
+import time
 
 app = Flask(__name__)
 app.config.from_mapping(SECRET_KEY=b'this-is-not-very-secure-but-will-work')
@@ -40,7 +40,6 @@ logo = img(src='../static/bull2.png', height="50", width="50", style="margin-top
 
 topbar = Navbar(logo,
                     View('Home', 'home'),
-                    View('Sign in', 'sign_in'),
                     View('Logout', 'logout')
                     )
 
@@ -75,6 +74,8 @@ def sign_in():
         user = User.query.filter_by(email=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username and/or password')
+            time.sleep(3)
+
             return redirect(url_for('sign_in'))
             
         login_user(user, remember=True)
