@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+ <form action="" method="post" class="form" role="form">
+
+<div class="container">
+    <div class="row">
+        {{ wtf.quick_form(form) }}
+    </div>
+</div>
+
+</form>
+<center>
+<small>Dont have and account?</small>
+<form action="/reg/" method="get">
+    <input type="submit" value="Regester" 
+         name="Submit" id="frm1_submit" />
+</form>
+
+</center>
+{% endblock %}

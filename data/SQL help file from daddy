@@ -1,0 +1,14 @@
+To insert a record into an existing table type :
+INSERT INTO country (name)
+VALUES ('USA'); 
+
+To insert multiple values to an existing table:
+INSERT INTO country (name)
+VALUES  ('USA'), 
+	('United Kingdom'),
+	('Switzerland');
+	
+To select all from a table:
+SELECT * from country;	
+	
+	
