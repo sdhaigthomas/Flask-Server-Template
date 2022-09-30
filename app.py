@@ -40,7 +40,6 @@ logo = img(src='../static/bull2.png', height="50", width="50", style="margin-top
 
 topbar = Navbar(logo,
                     View('Home', 'home'),
-                    View('Sign in', 'sign_in'),
                     View('Logout', 'logout')
                     )
 

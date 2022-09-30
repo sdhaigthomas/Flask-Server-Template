@@ -1,10 +1,12 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block navbar %}
-{% if logged_in == 'True' %}
-{{nav.top_without_logout.render()}}
-{% else %}
+{% if current_user.is_authenticated == True %}
+<script>alert("logged in") </script>
 {{nav.top.render()}}
+{% else %}
+{{ nav.top_without_logout.render() }}
+<script>alert("not logged in") </script>
 {% endif %}
 {% endblock %}
 {% block content %}
