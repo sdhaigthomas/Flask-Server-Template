@@ -1,3 +1,6 @@
+"""
+This file crates the database models for Sqlite db
+"""
 from locale import currency
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -7,12 +10,9 @@ fake = Faker()
 from sqlalchemy import ForeignKey
 import random
 from app import db
-
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import login
 from flask_login import UserMixin # a mixin class is a normal class but with a few added restrictions in how it can be used. This one is called 'UserMixin'.
-
-
 
 class User(UserMixin, db.Model): # ********************* Flask-Login  extension works with application's user model, and expects certain properties and methods to be implemented in it. These are 'is_authenticated', 'is_active', 'is_anonymous' and 'get_id'. You can implemtent these manually or just inherit all of them from a class called UserMixin from flask_login
     id = db.Column(db.Integer, primary_key=True)
